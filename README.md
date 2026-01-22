@@ -32,12 +32,22 @@ sudo dnf install python3-evdev
 sudo pacman -S python-evdev
 ```
 
-### 2. Create script
+### 2. Create scripts
+```bash
+nano ./detect-kbd.py
+```
+Paste the code from `detect-kbd.py`
+
+```bash
+sudo python ./detect-kbd.py
+```
+Note the path returned.
+
 ```bash
 sudo nano /usr/local/bin/capslock-fix.py
 ```
 
-Paste the code from `capslock-fix.py`, save (Ctrl+O, Enter, Ctrl+X).
+Paste the code from `capslock-fix.py` and enter previously detected path into device_path
 ```bash
 sudo chmod +x /usr/local/bin/capslock-fix.py
 ```
