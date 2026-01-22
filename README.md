@@ -68,7 +68,7 @@ After=systemd-user-sessions.service
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/capslock-fix.py
+ExecStart=/usr/bin/python3 /usr/local/bin/capslock-fix.py
 Restart=always
 RestartSec=2
 
