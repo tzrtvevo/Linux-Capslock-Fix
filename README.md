@@ -9,8 +9,8 @@ As far as I know, this repo is the most "proper fix" to this annoying behavior a
 ## Quick Install
 ```bash
 curl -O https://raw.githubusercontent.com/TreeOfSelf/Linux-Capslock-Fix/main/install.py
-chmod +x install.sh
-sudo python ./install.sh
+chmod +x install.py
+sudo python ./install.py
 ```
 
 ## Manual Install
