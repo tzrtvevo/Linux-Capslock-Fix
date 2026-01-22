@@ -92,6 +92,9 @@ sudo systemctl status capslock-fix.service
 
 Done. Runs on boot forever.
 
+## Special thanks
+[tzrtvevo](https://github.com/tzrtvevo) - for helping fix a bug and greatly improving the installation process 
+
 ---
 
 <sub><sup>I don't care if it's how typewriters worked, we're not using typewriters. We have computers with millisecond input polling and people typing at 145+ WPM. The "press to lock, release to unlock" behavior is a HALF-CENTURY OLD mechanical limitation, not some sacred design principle. You know what else typewriters did? They jammed if you typed too fast. Should we add that feature too for "authenticity"? Every other modern OS figured this out decades ago- Windows, Mac, even BSD - they all toggle on PRESS because that's what makes sense for actual human typing patterns. When I hit Caps Lock, I want it to change STATE right then, not when I eventually get around to lifting my finger. This isn't about Mac vs Linux or "correct" behavior. It's about a kernel bug that breaks the expected behavior of a modifier key, and instead of fixing it, Linux maintainers are pointing at typewriters from before computers existed and saying "actually this is correct." It's ridiculous. The fact that we need arcane XKB hacks with undocumented Private() actions and mystery data values just to make a TOGGLE KEY work like every other toggle in computing is embarrassing. This is basic HID functionality that's been solved everywhere else.</sup></sub>
