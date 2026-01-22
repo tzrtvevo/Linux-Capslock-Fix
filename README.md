@@ -8,9 +8,9 @@ As far as I know, this repo is the most "proper fix" to this annoying behavior a
 
 ## Quick Install
 ```bash
-curl -O https://raw.githubusercontent.com/TreeOfSelf/Linux-Capslock-Fix/main/install.sh
-chmod +x install.sh
-sudo ./install.sh
+curl -O https://raw.githubusercontent.com/TreeOfSelf/Linux-Capslock-Fix/main/install.py
+chmod +x install.py
+sudo python ./install.py
 ```
 
 ## Manual Install
@@ -32,12 +32,25 @@ sudo dnf install python3-evdev
 sudo pacman -S python-evdev
 ```
 
-### 2. Create script
+### 2. Create scripts
+#### 2.1 Keyboard Detection
+```bash
+nano ./detect-kbd.py
+```
+Paste the code from `detect-kbd.py`
+
+```bash
+sudo python ./detect-kbd.py
+```
+Note the path returned.
+
+
+#### 2.2 Fix script
 ```bash
 sudo nano /usr/local/bin/capslock-fix.py
 ```
+Paste the code from `capslock-fix.py` and enter previously detected path into device_path
 
-Paste the code from `capslock-fix.py`, save (Ctrl+O, Enter, Ctrl+X).
 ```bash
 sudo chmod +x /usr/local/bin/capslock-fix.py
 ```
@@ -55,7 +68,7 @@ After=systemd-user-sessions.service
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/capslock-fix.py
+ExecStart=/usr/bin/python3 /usr/local/bin/capslock-fix.py
 Restart=always
 RestartSec=2
 
