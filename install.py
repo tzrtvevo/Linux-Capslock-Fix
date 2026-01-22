@@ -16,17 +16,17 @@ try:
 except ImportError:
 
     if subprocess.run("apt").returncode == 0:
-        subprocess.run("apt","install","-y","python3-evdev")
+        subprocess.run(["apt","install","-y","python3-evdev"])
         import evdev
         from evdev import UInput, ecodes as e
 
     elif subprocess.run("dnf").returncode == 0:
-        subprocess.run("dnf","install","-y","python3-evdev")
+        subprocess.run(["dnf","install","-y","python3-evdev"])
         import evdev
         from evdev import UInput, ecodes as e
 
     elif subprocess.run("pacman").returncode == 0:
-        subprocess.run("pacman","-S","--noconfirm","python3-evdev")
+        subprocess.run(["pacman","-S","--noconfirm","python3-evdev"])
         import evdev
         from evdev import UInput, ecodes as e
 
@@ -76,7 +76,7 @@ from evdev import UInput, ecodes as e
 import select
 import sys
 
-device_path = {kbd.path}
+device_path = "{kbd.path}"
 
 kbd = evdev.InputDevice(device_path)
 
@@ -154,9 +154,9 @@ except Exception as e:
     print(f"An error occurred: {e}")
 
 
-subprocess.run("systemctl","daemon-reload")
-subprocess.run("systemctl","enable","capslock-fix.service")
-subprocess.run("systemctl","start","capslock-fix.service")
+subprocess.run(["systemctl","daemon-reload"])
+subprocess.run(["systemctl","enable","capslock-fix.service"])
+subprocess.run(["systemctl","start","capslock-fix.service"])
 
 print("Done! Check status: ")
 print("sudo systemctl status capslock-fix.service")
