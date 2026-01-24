@@ -36,6 +36,8 @@ except ImportError:
 
 
 
+subprocess.run(["systemctl","stop","capslock-fix.service"])
+subprocess.run(["systemctl","disable","capslock-fix.service"])
 
 devices = [evdev.InputDevice(path) for path in evdev.list_devices()]
 keyboards = [
