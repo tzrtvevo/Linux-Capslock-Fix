@@ -35,6 +35,11 @@ sudo pacman -S python-evdev
 
 ### 2. Create scripts
 #### 2.1 Keyboard Detection
+If you have the fix running already, stop it first.
+```bash
+sudo systemctl stop capslock-fix.service
+```
+
 ```bash
 nano ./detect-kbd.py
 ```
